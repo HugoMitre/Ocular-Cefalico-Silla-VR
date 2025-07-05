@@ -11,7 +11,7 @@ public class RutaManager : MonoBehaviour
     public LineRenderer rutaReal;
     public Transform sillaDeRuedas;
 
-    // Propiedades públicas para DataCombiner
+    // Propiedades pÃºblicas para DataCombiner
     public Vector3 UltimaPosicion
     {
         get { return registros.Count > 0 ? registros[registros.Count - 1].posicionReal : Vector3.zero; }
@@ -93,7 +93,7 @@ public class RutaManager : MonoBehaviour
             Debug.Log($"Tiempo: {registro.tiempo:F3} - " +
                      $"Real(X,Y,Z): ({registro.posicionReal.x:F3}, {registro.posicionReal.y:F3}, {registro.posicionReal.z:F3}) - " +
                      $"Ideal(X,Z): ({registro.posicionIdeal.x:F3}, {registro.posicionIdeal.z:F3}) - " +
-                     $"Desviación: {registro.desviacion:F3}");
+                     $"DesviaciÃ³n: {registro.desviacion:F3}");
         }
     }
 
