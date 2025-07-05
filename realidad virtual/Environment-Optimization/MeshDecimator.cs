@@ -7,7 +7,7 @@ using System.Linq;
 
 #if UNITY_EDITOR
 [ExecuteInEditMode]
-public class SimplificadorMasivo : MonoBehaviour
+public class MeshDecimator : MonoBehaviour
 {
     [Header("Configuración Principal")]
     [Tooltip("Carpetas que contienen todos los modelos a simplificar")]
