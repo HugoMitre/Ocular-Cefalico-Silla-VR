@@ -6,7 +6,7 @@ using System.Text;
 using WebSocketSharp;
 using System.Linq;
 
-public class MyMessageListener : MonoBehaviour
+public class WheelchairjoystickController : MonoBehaviour
 {
     // Propiedades para el DataCombiner
     public Vector2 UltimoInput
@@ -41,24 +41,24 @@ public class MyMessageListener : MonoBehaviour
     public GameObject wheelchair;
     public Camera mainCamera;
 
-    [Header("Configuración WebSocket")]
+    [Header("ConfiguraciÃ³n WebSocket")]
     public string websocketURL = "ws://localhost:8080";
     public float reconnectInterval = 2f;
 
-    [Header("Configuración de Movimiento")]
+    [Header("ConfiguraciÃ³n de Movimiento")]
     public float movementSpeed = 5.0f;
     public float rotationSpeed = 100.0f;
     public float deadzone = 0.1f;
 
-    [Header("Configuración de Ejes")]
+    [Header("ConfiguraciÃ³n de Ejes")]
     public bool invertX = false;
     public bool invertY = false;
 
-    [Header("Diagnóstico")]
+    [Header("DiagnÃ³stico")]
     public bool enableDebugLogging = true;
     public bool showGizmos = true;
 
-    [Header("Configuración de Registro")]
+    [Header("ConfiguraciÃ³n de Registro")]
     public string carpetaGuardado = @"C:\Users\Manuel Delado\Documents";
     public string prefijoArchivo = "datos_joystick";
 
@@ -86,7 +86,7 @@ public class MyMessageListener : MonoBehaviour
     private Vector2[] inputBuffer = new Vector2[3];
     private int bufferIndex = 0;
 
-    // Intervalo de recolección de datos
+    // Intervalo de recolecciÃ³n de datos
     private float intervaloRecoleccion = 0.2f;
     private float ultimoTiempoRecoleccion = 0f;
 
@@ -103,7 +103,7 @@ public class MyMessageListener : MonoBehaviour
     {
         if (!wheelchair)
         {
-            Debug.LogError("¡Error: No se ha asignado el GameObject de la silla de ruedas!");
+            Debug.LogError("Â¡Error: No se ha asignado el GameObject de la silla de ruedas!");
             enabled = false;
             return false;
         }
@@ -113,7 +113,7 @@ public class MyMessageListener : MonoBehaviour
             mainCamera = Camera.main;
             if (!mainCamera)
             {
-                Debug.LogError("¡Error: No se encontró ninguna cámara!");
+                Debug.LogError("Â¡Error: No se encontrÃ³ ninguna cÃ¡mara!");
                 enabled = false;
                 return false;
             }
@@ -121,7 +121,7 @@ public class MyMessageListener : MonoBehaviour
 
         if (!UnityMainThreadDispatcher.Instance())
         {
-            Debug.LogError("¡Error: No se encontró UnityMainThreadDispatcher en la escena!");
+            Debug.LogError("Â¡Error: No se encontrÃ³ UnityMainThreadDispatcher en la escena!");
             enabled = false;
             return false;
         }
@@ -221,16 +221,16 @@ public class MyMessageListener : MonoBehaviour
 
     void Update()
     {
-        // Verificar el estado de la conexión
+        // Verificar el estado de la conexiÃ³n
         CheckConnectionStatus();
 
-        // Aplicar movimiento si está sobre el deadzone
+        // Aplicar movimiento si estÃ¡ sobre el deadzone
         if (currentInput.magnitude > deadzone && isConnected)
         {
             ApplyMovement();
         }
 
-        // Recolección de datos en intervalos
+        // RecolecciÃ³n de datos en intervalos
         if (Time.time - ultimoTiempoRecoleccion >= intervaloRecoleccion)
         {
             RegistrarDatosEnIntervalo(currentInput);
@@ -261,7 +261,7 @@ public class MyMessageListener : MonoBehaviour
 
     void ApplyMovement()
     {
-        // Rotación
+        // RotaciÃ³n
         float rotationAmount = currentInput.x * rotationSpeed * Time.deltaTime;
         wheelchair.transform.Rotate(0, -rotationAmount, 0);
 
@@ -275,7 +275,7 @@ public class MyMessageListener : MonoBehaviour
     {
         if (!wheelchair) return;
 
-        // Mantener el buffer en un tamaño fijo
+        // Mantener el buffer en un tamaÃ±o fijo
         if (tiempos.Count >= DATA_BUFFER_SIZE)
         {
             tiempos.Dequeue();
