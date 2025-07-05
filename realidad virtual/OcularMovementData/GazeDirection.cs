@@ -115,7 +115,7 @@ public class GazeDirectionwitharea : MonoBehaviour
 
         if (areaNames.Count == 0)
         {
-            Debug.LogError("¡No hay áreas asignadas! Por favor asigne box colliders en el inspector.");
+            Debug.LogError("Â¡No hay Ã¡reas asignadas! Por favor asigne box colliders en el inspector.");
             enabled = false;
         }
     }
@@ -141,13 +141,13 @@ public class GazeDirectionwitharea : MonoBehaviour
     {
         if (isVertical)
         {
-            // Para ángulos verticales, primero multiplicamos por 2 y luego normalizamos a -1 a 1
+            // Para Ã¡ngulos verticales, primero multiplicamos por 2 y luego normalizamos a -1 a 1
             angle = angle * 2f;
             return Mathf.Clamp(angle / 90f, -1f, 1f);
         }
         else
         {
-            // Para ángulos horizontales, normalizamos directamente a -1 a 1 usando 90 como base
+            // Para Ã¡ngulos horizontales, normalizamos directamente a -1 a 1 usando 90 como base
             return Mathf.Clamp(angle / 90f, -1f, 1f);
         }
     }
@@ -168,15 +168,15 @@ public class GazeDirectionwitharea : MonoBehaviour
         Vector3 worldDir = (positions[1] - positions[0]).normalized;
         Vector3 localDir = transform.InverseTransformDirection(worldDir);
 
-        // Calcula ángulos raw
+        // Calcula Ã¡ngulos raw
         float rawAngleH = Mathf.Atan2(localDir.x, localDir.z) * Mathf.Rad2Deg;
         float rawAngleV = Mathf.Atan2(localDir.y, new Vector2(localDir.x, localDir.z).magnitude) * Mathf.Rad2Deg;
 
-        // Normaliza a -180 a 180 (mantenemos este paso para la detección de dirección)
+        // Normaliza a -180 a 180 (mantenemos este paso para la detecciÃ³n de direcciÃ³n)
         float normalizedAngleH = NormalizeAngle(rawAngleH);
         float normalizedAngleV = rawAngleV;
 
-        // Para mostrar y normalizar, multiplicamos el ángulo vertical por 2
+        // Para mostrar y normalizar, multiplicamos el Ã¡ngulo vertical por 2
         float displayAngleV = normalizedAngleV * 2f;
 
         // Normaliza a -1 a 1 basado en 90 grados
@@ -191,7 +191,7 @@ public class GazeDirectionwitharea : MonoBehaviour
         records.Add((currentTime, normalizedAngleH, displayAngleV, normalizedMinusOneOneH, normalizedMinusOneOneV, finalDirection));
 
         Debug.Log($"Time: {currentTime:F2}s, " +
-                 $"GazeAngleX: {normalizedAngleH:F2}°, GazeAngleY: {displayAngleV:F2}°, " +
+                 $"GazeAngleX: {normalizedAngleH:F2}Â°, GazeAngleY: {displayAngleV:F2}Â°, " +
                  $"GazeNormalizedX: {normalizedMinusOneOneH:F2}, GazeNormalizedY: {normalizedMinusOneOneV:F2}, " +
                  $"GazeDirection: {finalDirection}");
     }
@@ -231,7 +231,7 @@ public class GazeDirectionwitharea : MonoBehaviour
     {
         if (records.Count == 0)
         {
-            Debug.LogWarning("¡No hay datos para guardar!");
+            Debug.LogWarning("Â¡No hay datos para guardar!");
             return;
         }
 
@@ -242,7 +242,7 @@ public class GazeDirectionwitharea : MonoBehaviour
         {
             csv.AppendLine($"{record.time:F3}," +
                           $"{record.angleH:F6}," +
-                          $"{record.angleV:F6}," +   // Ya está multiplicado por 2
+                          $"{record.angleV:F6}," +   // Ya estÃ¡ multiplicado por 2
                           $"{record.normH:F6}," +
                           $"{record.normV:F6}," +
                           $"{record.direction}");
