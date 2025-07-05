@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-public class BatchInstancingSetup : MonoBehaviour
+public class GPUInstancingTool : MonoBehaviour
 {
     [SerializeField] private GameObject rootFolder;
     [SerializeField] private bool includeInactive = true;
@@ -51,7 +51,7 @@ public class BatchInstancingSetup : MonoBehaviour
 
         if (!SystemInfo.supportsInstancing)
         {
-            Debug.LogError("[BatchInstancingSetup] GPU Instancing no est· soportado en este sistema.");
+            Debug.LogError("[BatchInstancingSetup] GPU Instancing no est√° soportado en este sistema.");
             return false;
         }
 
@@ -92,7 +92,7 @@ public class BatchInstancingSetup : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("[BatchInstancingSetup] No se encontraron renderers en la jerarquÌa.");
+                    Debug.LogWarning("[BatchInstancingSetup] No se encontraron renderers en la jerarqu√≠a.");
                 }
             }
         }
@@ -142,7 +142,7 @@ public class BatchInstancingSetup : MonoBehaviour
         {
             if (result.ProcessedCount == 0)
             {
-                Debug.LogWarning("[BatchInstancingSetup] No se procesÛ ning˙n material.");
+                Debug.LogWarning("[BatchInstancingSetup] No se proces√≥ ning√∫n material.");
                 return;
             }
 
@@ -272,7 +272,7 @@ public class BatchInstancingSetupEditor : Editor
         buttonStyle.fontStyle = FontStyle.Bold;
         buttonStyle.padding = new RectOffset(10, 10, 6, 6);
 
-        // BotÛn principal
+        // Bot√≥n principal
         GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
         if (GUILayout.Button("INICIAR PROCESO DE GPU INSTANCING", buttonStyle, GUILayout.Height(30)))
         {
@@ -282,7 +282,7 @@ public class BatchInstancingSetupEditor : Editor
 
         EditorGUILayout.Space(5);
 
-        // BotÛn de verificaciÛn
+        // Bot√≥n de verificaci√≥n
         GUI.backgroundColor = new Color(0.4f, 0.6f, 0.8f);
         if (GUILayout.Button("Verificar Estado Actual", buttonStyle))
         {
@@ -292,11 +292,11 @@ public class BatchInstancingSetupEditor : Editor
 
         EditorGUILayout.Space(10);
 
-        // ¡rea informativa
+        // √Årea informativa
         EditorGUILayout.HelpBox(
-            "Este proceso activar· GPU Instancing en todos los materiales del objeto seleccionado y sus hijos.\n\n" +
+            "Este proceso activar√° GPU Instancing en todos los materiales del objeto seleccionado y sus hijos.\n\n" +
             "1. Asigna el Root Folder (opcional)\n" +
-            "2. Ajusta las opciones seg˙n necesites\n" +
+            "2. Ajusta las opciones seg√∫n necesites\n" +
             "3. Presiona 'INICIAR PROCESO' para comenzar\n" +
             "4. Revisa la consola para ver los resultados",
             MessageType.Info);
@@ -305,7 +305,7 @@ public class BatchInstancingSetupEditor : Editor
         {
             EditorGUILayout.Space(5);
             EditorGUILayout.HelpBox(
-                "Si no asignas un Root Folder, se usar· el objeto actual como raÌz.",
+                "Si no asignas un Root Folder, se usar√° el objeto actual como ra√≠z.",
                 MessageType.Info);
         }
     }
