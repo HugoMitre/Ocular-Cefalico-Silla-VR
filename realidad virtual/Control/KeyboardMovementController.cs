@@ -34,7 +34,7 @@ public class rotaciontecla : MonoBehaviour
         float rotation = 0f;
         Vector3 movement = Vector3.zero;
 
-        // RotaciÛn
+        // Rotaci√≥n
         if (Input.GetKey(KeyCode.A))
         {
             rotation -= 1f;
@@ -44,14 +44,14 @@ public class rotaciontecla : MonoBehaviour
             rotation += 1f;
         }
 
-        // Movimiento - MODIFICADO AQUÕ
+        // Movimiento - MODIFICADO AQU√ç
         if (Input.GetKey(KeyCode.W))
         {
             movement = -transform.right * Speed; // Movimiento hacia adelante
         }
         if (Input.GetKey(KeyCode.S))
         {
-            movement = transform.right * Speed; // Movimiento hacia atr·s
+            movement = transform.right * Speed; // Movimiento hacia atr√°s
         }
 
         // Aplicar movimiento
@@ -62,7 +62,7 @@ public class rotaciontecla : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
-        // Aplicar rotaciÛn
+        // Aplicar rotaci√≥n
         transform.Rotate(0, rotation * Time.fixedDeltaTime * RotationSpeed, 0);
     }
 }
