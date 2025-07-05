@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-public class DataCombiner : MonoBehaviour
+public class BehavioralDataLogger : MonoBehaviour
 {
     [SerializeField]
     private GameObject cameraOffset;
@@ -44,15 +44,15 @@ public class DataCombiner : MonoBehaviour
         participanteActual = PlayerPrefs.GetInt("ParticipanteActual", 1);
         intentoActual = PlayerPrefs.GetInt("IntentoActual", 1);
 
-        Debug.Log($"Iniciando grabación para Participante {participanteActual}, Intento {intentoActual}");
+        Debug.Log($"Iniciando grabaciÃ³n para Participante {participanteActual}, Intento {intentoActual}");
 
         if (PlayerPrefs.HasKey("ParticipanteActual"))
         {
-            Debug.Log("Configuración encontrada en PlayerPrefs");
+            Debug.Log("ConfiguraciÃ³n encontrada en PlayerPrefs");
         }
         else
         {
-            Debug.LogWarning("No se encontró configuración previa. Usando valores por defecto.");
+            Debug.LogWarning("No se encontrÃ³ configuraciÃ³n previa. Usando valores por defecto.");
         }
     }
 
@@ -73,7 +73,7 @@ public class DataCombiner : MonoBehaviour
 
             Debug.Log($"Camera Offset encontrado: {cameraOffset.name}");
             Debug.Log($"Velocidad Script encontrado: {velocidadScript != null}");
-            Debug.Log($"Desviación Script encontrado: {desviacionScript != null}");
+            Debug.Log($"DesviaciÃ³n Script encontrado: {desviacionScript != null}");
             Debug.Log($"Permanencia Script encontrado: {permanenciaScript != null}");
             Debug.Log($"Ruta Script encontrado: {rutaScript != null}");
             Debug.Log($"Gaze Script encontrado: {gazeScript != null}");
@@ -102,7 +102,7 @@ public class DataCombiner : MonoBehaviour
         }
         else
         {
-            Debug.LogError("¡Faltan asignar objetos necesarios!");
+            Debug.LogError("Â¡Faltan asignar objetos necesarios!");
         }
     }
     void Update()
@@ -124,10 +124,10 @@ public class DataCombiner : MonoBehaviour
             string[] lines = csvData.ToString().Split('\n');
             if (lines.Length > 1)
             {
-                Debug.Log($"Primera línea (header): {lines[0]}");
-                Debug.Log($"Segunda línea (datos): {lines[1]}");
+                Debug.Log($"Primera lÃ­nea (header): {lines[0]}");
+                Debug.Log($"Segunda lÃ­nea (datos): {lines[1]}");
             }
-            Debug.Log($"Total de líneas: {lines.Length}");
+            Debug.Log($"Total de lÃ­neas: {lines.Length}");
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -158,7 +158,7 @@ public class DataCombiner : MonoBehaviour
             line.Append(",0,0,0,0");
         }
 
-        // Datos de desviación de cabeza
+        // Datos de desviaciÃ³n de cabeza
         if (desviacionScript != null)
         {
             Vector2 dev = desviacionScript.UltimaDesviacion;
@@ -184,7 +184,7 @@ public class DataCombiner : MonoBehaviour
             line.Append(",0,0,0,0");
         }
 
-        // Datos de dirección de cabeza
+        // Datos de direcciÃ³n de cabeza
         if (headDirectionScript != null)
         {
             float horizontalAngle = headDirectionScript.UltimoAnguloHorizontal;
@@ -208,7 +208,7 @@ public class DataCombiner : MonoBehaviour
         else
         {
             line.Append(",0,0,0,0");
-        }// Datos de desviación de mirada
+        }// Datos de desviaciÃ³n de mirada
         if (gazeStdDevScript != null)
         {
             Vector2 gazeStdDev = gazeStdDevScript.UltimaDesviacionGaze;
@@ -234,7 +234,7 @@ public class DataCombiner : MonoBehaviour
             line.Append(",0,0,0,0");
         }
 
-        // Datos de dirección de mirada por áreas
+        // Datos de direcciÃ³n de mirada por Ã¡reas
         if (gazeDirectionAreaScript != null)
         {
             float angleX = gazeDirectionAreaScript.UltimoAnguloGazeX;
@@ -247,7 +247,7 @@ public class DataCombiner : MonoBehaviour
             line.Append(",0,0,OutOfArea");
         }
 
-        // Datos de ruta y posición
+        // Datos de ruta y posiciÃ³n
         if (rutaScript != null)
         {
             Vector3 pos = rutaScript.UltimaPosicion;
@@ -322,7 +322,7 @@ public class DataCombiner : MonoBehaviour
                      $"Participante: {participanteActual}\n" +
                      $"Intento: {intentoActual}\n" +
                      $"Ruta: {rutaCompleta}\n" +
-                     $"Tamaño: {csvData.Length} bytes");
+                     $"TamaÃ±o: {csvData.Length} bytes");
         }
         catch (Exception e)
         {
