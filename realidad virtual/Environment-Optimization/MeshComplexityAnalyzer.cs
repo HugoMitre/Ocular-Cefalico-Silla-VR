@@ -14,7 +14,7 @@ public class AnalizadorMallas : EditorWindow
     private bool agruparPorCarpeta = false;
     private string filtroNombre = "";
 
-    [MenuItem("Window/Análisis de Mallas")]
+    [MenuItem("Window/AnÃ¡lisis de Mallas")]
     public static void ShowWindow()
     {
         GetWindow<AnalizadorMallas>("Analizador de Mallas");
@@ -27,16 +27,16 @@ public class AnalizadorMallas : EditorWindow
         public string carpetaPadre;
         public int vertices;
         public int triangulos;
-        public float tamañoMB;
+        public float tamaÃ±oMB;
     }
 
     private void OnGUI()
     {
         GUILayout.Label("Analizador de Mallas", EditorStyles.boldLabel);
 
-        // Sección de configuración
+        // SecciÃ³n de configuraciÃ³n
         EditorGUILayout.BeginVertical("box");
-        GUILayout.Label("Configuración", EditorStyles.boldLabel);
+        GUILayout.Label("ConfiguraciÃ³n", EditorStyles.boldLabel);
 
         // Lista de carpetas
         EditorGUILayout.LabelField("Carpetas a Analizar:");
@@ -52,12 +52,12 @@ public class AnalizadorMallas : EditorWindow
             EditorGUILayout.EndHorizontal();
         }
 
-        if (GUILayout.Button("Añadir Carpeta"))
+        if (GUILayout.Button("AÃ±adir Carpeta"))
         {
             carpetasAnalizar.Add(null);
         }
 
-        // Opciones de visualización
+        // Opciones de visualizaciÃ³n
         EditorGUILayout.Space();
         mostrarTodo = EditorGUILayout.Toggle("Mostrar Todos los Objetos", mostrarTodo);
         if (!mostrarTodo)
@@ -69,7 +69,7 @@ public class AnalizadorMallas : EditorWindow
 
         EditorGUILayout.EndVertical();
 
-        // Botón de análisis
+        // BotÃ³n de anÃ¡lisis
         if (GUILayout.Button("Analizar Mallas"))
         {
             AnalizarMallas();
@@ -104,12 +104,12 @@ public class AnalizadorMallas : EditorWindow
                         carpetaPadre = GetParentFolderName(mf.transform),
                         vertices = mesh.vertexCount,
                         triangulos = mesh.triangles.Length / 3,
-                        tamañoMB = CalcularTamañoMeshMB(mesh)
+                        tamaÃ±oMB = CalcularTamaÃ±oMeshMB(mesh)
                     });
                 }
             }
 
-            // Analizar SkinnedMeshRenderers también
+            // Analizar SkinnedMeshRenderers tambiÃ©n
             var skinnedMeshes = carpeta.GetComponentsInChildren<SkinnedMeshRenderer>(true);
             foreach (var smr in skinnedMeshes)
             {
@@ -123,7 +123,7 @@ public class AnalizadorMallas : EditorWindow
                         carpetaPadre = GetParentFolderName(smr.transform),
                         vertices = mesh.vertexCount,
                         triangulos = mesh.triangles.Length / 3,
-                        tamañoMB = CalcularTamañoMeshMB(mesh)
+                        tamaÃ±oMB = CalcularTamaÃ±oMeshMB(mesh)
                     });
                 }
             }
@@ -135,7 +135,7 @@ public class AnalizadorMallas : EditorWindow
         EditorGUILayout.Space();
         EditorGUILayout.BeginVertical("box");
 
-        // Estadísticas totales
+        // EstadÃ­sticas totales
         MostrarEstadisticasTotales();
 
         // Filtrar y ordenar resultados
@@ -162,14 +162,14 @@ public class AnalizadorMallas : EditorWindow
         {
             vertices = objetosAnalizados.Sum(o => o.vertices),
             triangulos = objetosAnalizados.Sum(o => o.triangulos),
-            tamañoMB = objetosAnalizados.Sum(o => o.tamañoMB)
+            tamaÃ±oMB = objetosAnalizados.Sum(o => o.tamaÃ±oMB)
         };
 
-        EditorGUILayout.LabelField("Estadísticas Totales:", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("EstadÃ­sticas Totales:", EditorStyles.boldLabel);
         EditorGUILayout.LabelField($"Total Objetos: {objetosAnalizados.Count}");
-        EditorGUILayout.LabelField($"Total Vértices: {totales.vertices:N0}");
-        EditorGUILayout.LabelField($"Total Triángulos: {totales.triangulos:N0}");
-        EditorGUILayout.LabelField($"Tamaño Total: {totales.tamañoMB:F2} MB");
+        EditorGUILayout.LabelField($"Total VÃ©rtices: {totales.vertices:N0}");
+        EditorGUILayout.LabelField($"Total TriÃ¡ngulos: {totales.triangulos:N0}");
+        EditorGUILayout.LabelField($"TamaÃ±o Total: {totales.tamaÃ±oMB:F2} MB");
         EditorGUILayout.Space();
     }
 
@@ -177,7 +177,7 @@ public class AnalizadorMallas : EditorWindow
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
-        EditorGUILayout.LabelField("Objetos por Cantidad de Triángulos:", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("Objetos por Cantidad de TriÃ¡ngulos:", EditorStyles.boldLabel);
 
         var listaFinal = mostrarTodo ? resultados : resultados.Take(topObjetos);
 
@@ -186,9 +186,9 @@ public class AnalizadorMallas : EditorWindow
             EditorGUILayout.BeginVertical("box");
             EditorGUILayout.LabelField($"Nombre: {obj.nombre}");
             EditorGUILayout.LabelField($"Ruta: {obj.rutaCompleta}");
-            EditorGUILayout.LabelField($"Vértices: {obj.vertices:N0}");
-            EditorGUILayout.LabelField($"Triángulos: {obj.triangulos:N0}");
-            EditorGUILayout.LabelField($"Tamaño: {obj.tamañoMB:F2} MB");
+            EditorGUILayout.LabelField($"VÃ©rtices: {obj.vertices:N0}");
+            EditorGUILayout.LabelField($"TriÃ¡ngulos: {obj.triangulos:N0}");
+            EditorGUILayout.LabelField($"TamaÃ±o: {obj.tamaÃ±oMB:F2} MB");
             EditorGUILayout.EndVertical();
             EditorGUILayout.Space();
         }
@@ -212,20 +212,20 @@ public class AnalizadorMallas : EditorWindow
             {
                 vertices = grupo.Sum(o => o.vertices),
                 triangulos = grupo.Sum(o => o.triangulos),
-                tamañoMB = grupo.Sum(o => o.tamañoMB)
+                tamaÃ±oMB = grupo.Sum(o => o.tamaÃ±oMB)
             };
 
-            EditorGUILayout.LabelField($"Total Vértices: {estadisticasGrupo.vertices:N0}");
-            EditorGUILayout.LabelField($"Total Triángulos: {estadisticasGrupo.triangulos:N0}");
-            EditorGUILayout.LabelField($"Tamaño Total: {estadisticasGrupo.tamañoMB:F2} MB");
+            EditorGUILayout.LabelField($"Total VÃ©rtices: {estadisticasGrupo.vertices:N0}");
+            EditorGUILayout.LabelField($"Total TriÃ¡ngulos: {estadisticasGrupo.triangulos:N0}");
+            EditorGUILayout.LabelField($"TamaÃ±o Total: {estadisticasGrupo.tamaÃ±oMB:F2} MB");
 
             var objetosGrupo = mostrarTodo ? grupo : grupo.Take(topObjetos);
             foreach (var obj in objetosGrupo)
             {
                 EditorGUILayout.BeginVertical("helpBox");
                 EditorGUILayout.LabelField($"Nombre: {obj.nombre}");
-                EditorGUILayout.LabelField($"Vértices: {obj.vertices:N0}");
-                EditorGUILayout.LabelField($"Triángulos: {obj.triangulos:N0}");
+                EditorGUILayout.LabelField($"VÃ©rtices: {obj.vertices:N0}");
+                EditorGUILayout.LabelField($"TriÃ¡ngulos: {obj.triangulos:N0}");
                 EditorGUILayout.EndVertical();
             }
 
@@ -256,26 +256,26 @@ public class AnalizadorMallas : EditorWindow
         return transform.parent.name;
     }
 
-    private float CalcularTamañoMeshMB(Mesh mesh)
+    private float CalcularTamaÃ±oMeshMB(Mesh mesh)
     {
-        float tamaño = 0;
+        float tamaÃ±o = 0;
 
-        // Vertices (12 bytes por vértice - 3 floats x 4 bytes)
-        tamaño += mesh.vertexCount * 12;
+        // Vertices (12 bytes por vÃ©rtice - 3 floats x 4 bytes)
+        tamaÃ±o += mesh.vertexCount * 12;
 
         // Normales (12 bytes por normal)
         if (mesh.normals != null && mesh.normals.Length > 0)
-            tamaño += mesh.normals.Length * 12;
+            tamaÃ±o += mesh.normals.Length * 12;
 
         // UVs (8 bytes por UV - 2 floats x 4 bytes)
         if (mesh.uv != null && mesh.uv.Length > 0)
-            tamaño += mesh.uv.Length * 8;
+            tamaÃ±o += mesh.uv.Length * 8;
 
-        // Triangulos (4 bytes por índice)
-        tamaño += mesh.triangles.Length * 4;
+        // Triangulos (4 bytes por Ã­ndice)
+        tamaÃ±o += mesh.triangles.Length * 4;
 
         // Convertir a MB
-        return tamaño / (1024 * 1024);
+        return tamaÃ±o / (1024 * 1024);
     }
 }
 #endif
