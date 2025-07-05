@@ -5,7 +5,7 @@ public class zonas_visual : MonoBehaviour
     // Variables para configurar en el Inspector
     public string taskName;          // Nombre de la tarea para esta zona
     public string command;           // Comando para esta zona
-    public string zoneID;            // Identificador único de la zona
+    public string zoneID;            // Identificador Ãºnico de la zona
     public bool esZonaVerde = false; // Marcar si es zona verde
     public bool esZonaRoja = false;  // Marcar si es zona roja
 
@@ -17,7 +17,7 @@ public class zonas_visual : MonoBehaviour
         // Verificar que se haya asignado el DataCombiner
         if (dataCombiner == null)
         {
-            Debug.LogError($"Zona {zoneID}: No se asignó el DataCombiner. Por favor, arrastra el objeto con DataCombiner al campo en el Inspector.");
+            Debug.LogError($"Zona {zoneID}: No se asignÃ³ el DataCombiner. Por favor, arrastra el objeto con DataCombiner al campo en el Inspector.");
         }
     }
 
