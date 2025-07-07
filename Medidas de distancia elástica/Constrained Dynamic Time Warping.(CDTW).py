@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Comparador cDTW enfocado en matrices de costo con análisis de FLOPs exactos:
+Comparador cDTW enfocado en matrices de costo con análisis de FLOPs :
 1. Calcula cDTW entre trayectorias reales e ideales
 2. Genera matrices de costo para X y Z con ventana Sakoe-Chiba
 3. Guarda paths y métricas de similitud en CSV
-4. Integra análisis de FLOPs exactos mediante interceptación automática (IGUAL QUE MSM)
-5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
+4. Integra análisis de FLOPs exactos mediante interceptación automática
+5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs
 """
 
 from __future__ import annotations
