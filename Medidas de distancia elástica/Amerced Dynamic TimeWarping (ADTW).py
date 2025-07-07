@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Comparador ADTW HÍBRIDO: Implementación CORRECTA + Sistema FLOPs MSM
+Comparador ADTW HÍBRIDO: Implementación CORRECTA y Sistema FLOPs 
 1. Usa la implementación ADTW CORRECTA del segundo código
-2. Integra el sistema de interceptación exacta de FLOPs del MSM (automático)
+2. Integra el sistema de interceptación exacta de FLOPs 
 3. Genera matrices de costo para X y Z con penalización adaptativa
 4. Guarda paths y métricas de similitud en CSV
 5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
@@ -20,7 +20,7 @@ import matplotlib.colors as mcolors
 from functools import wraps
 import json
 
-# ══════════════ SISTEMA EXACTO DE FLOPs (DEL MSM - INTERCEPTACIÓN AUTOMÁTICA) ══════════════
+# ══════════════ SISTEMA EXACTO DE FLOPs ══════════════
 
 class ExactFLOPsTracker:
     """Interceptor automático de operaciones NumPy para conteo exacto de FLOPs"""
