@@ -5,7 +5,7 @@ Comparador WDTW enfocado en matrices de costo con análisis de FLOPs exactos:
 1. Calcula WDTW entre trayectorias reales e ideales usando función de peso sigmoidal
 2. Genera matrices de costo ponderadas para X y Z
 3. Guarda paths y métricas de similitud en CSV
-4. Integra análisis de FLOPs exactos mediante interceptación automática (IGUAL QUE MSM)
+4. Integra análisis de FLOPs exactos mediante interceptación automática 
 5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
 """
 
@@ -20,7 +20,7 @@ import matplotlib.colors as mcolors
 from functools import wraps
 import json
 
-# ══════════════ SISTEMA EXACTO DE FLOPs (INTEGRADO DESDE MSM) ══════════════
+# ══════════════ SISTEMA EXACTO DE FLOPs ═════════════
 
 class ExactFLOPsTracker:
     """Interceptor automático de operaciones NumPy para conteo exacto de FLOPs"""
