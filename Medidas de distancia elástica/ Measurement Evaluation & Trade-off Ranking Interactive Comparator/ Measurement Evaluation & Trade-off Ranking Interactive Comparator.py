@@ -1,10 +1,7 @@
 """
-EVALUADOR HÍBRIDO DE MEDIDAS DE SIMILITUD - VERSIÓN ACTUALIZADA
-Combina la robustez del Programa 1 con la interactividad del Programa 2
-Sistema con Optimización Multiobjetivo usando F(x) = α·Cost_comp(x) - β·Accuracy_align(x)
-PRINCIPIO: "Menor F(x) es mejor" - Balance entre eficiencia y precisión
-NOVEDAD: Usuario ingresa α y β, ranking SÍ cambia según parámetros
-ACTUALIZACIÓN: Incluye LCSS y cDTW (Total: 10 medidas de similitud)
+EVALUADOR HÍBRIDO DE MEDIDAS DE SIMILITUD
+Sistema con Optimización Multiobjetivo usando F(x) = α·Cost_comp(x) - β·Accuracy_align(x)4
+Usuario ingresa α y β, ranking SÍ cambia según parámetros
 """
 
 import re
