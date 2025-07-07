@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Comparador ESDTW enfocado en matrices de costo con análisis de FLOPs exactos:
+Comparador ESDTW enfocado en matrices de costo con análisis de FLOPs :
 1. Calcula ESDTW entre trayectorias reales e ideales usando extremos y HOG-1D
 2. Genera matrices de costo para X y Z basadas en características de forma
 3. Guarda paths y métricas de similitud en CSV
-4. Integra análisis de FLOPs exactos mediante interceptación automática (IGUAL QUE MSM)
-5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
+4. Integra análisis de FLOPs exactos mediante interceptación automática 
+5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs 
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from scipy.signal import find_peaks, savgol_filter
 from sklearn.metrics.pairwise import euclidean_distances
 from dataclasses import dataclass
 
-# ══════════════ SISTEMA EXACTO DE FLOPs (INTEGRADO DESDE MSM) ══════════════
+# ══════════════ SISTEMA EXACTO DE FLOPs  ══════════════
 
 class ExactFLOPsTracker:
     """Interceptor automático de operaciones NumPy para conteo exacto de FLOPs"""
