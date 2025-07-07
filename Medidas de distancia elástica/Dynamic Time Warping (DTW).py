@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Comparador DTW enfocado en matrices de costo con análisis de FLOPs exactos:
+Comparador DTW enfocado en matrices de costo con análisis de FLOPs:
 1. Calcula DTW entre trayectorias reales e ideales
 2. Genera matrices de costo para X y Z
 3. Guarda paths y métricas de similitud en CSV
 4. Integra análisis de FLOPs exactos mediante interceptación automática
-5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
+5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs 
 """
   
 from __future__ import annotations
