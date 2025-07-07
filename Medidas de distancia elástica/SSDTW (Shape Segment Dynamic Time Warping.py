@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Comparador SSDTW enfocado en matrices de costo con análisis de FLOPs exactos:
+Comparador SSDTW enfocado en matrices de costo con análisis de FLOPs e:
 1. Calcula SSDTW entre trayectorias reales e ideales usando wavelets
 2. Genera matrices de costo para X y Z con descomposición multi-escala
 3. Guarda paths y métricas de similitud en CSV
-4. Integra análisis de FLOPs exactos mediante interceptación automática (IGUAL QUE DTW/MSM)
-5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs QUE SE VEN BIEN
+4. Integra análisis de FLOPs exactos mediante interceptación automática 
+5. INCLUYE LAS DOS GRÁFICAS ESPECÍFICAS DE FLOPs 
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from functools import wraps
 import json
 # Removido pywt - implementación propia sin dependencias externas
 
-# ══════════════ SISTEMA EXACTO DE FLOPs (INTEGRADO DESDE DTW/MSM) ══════════════
+# ══════════════ SISTEMA EXACTO DE FLOPs  ══════════════
 
 class ExactFLOPsTracker:
     """Interceptor automático de operaciones NumPy para conteo exacto de FLOPs"""
