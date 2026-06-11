@@ -40,10 +40,9 @@ If you use this repository, the testbed, the datasets, or any of the derived cod
 
 ```bibtex
 @article{MitreHernandez2026OcularCefalico,
-  author  = {Mitre-Hern{\'a}ndez, Hugo and [co-authors]},
-  title   = {Behavioral Head-Motion Metrics and Elastic Time-Series Classification
-             for Hands-Free Wheelchair Control in Virtual Reality},
-  journal = {Computers in Human Behavior},
+  author  = {Authors]},
+  title   = {Elastic similarity ensembles and a hybrid MSM--LSTM classifier for head-motion command recognition: A multi-criteria framework applied to assistive wheelchair control in virtual reality},
+  journal = {Engineering Applications of Artificial Intelligence},
   year    = {2026},
   note    = {Manuscript submitted for publication}
 }
@@ -53,7 +52,7 @@ If you use this repository, the testbed, the datasets, or any of the derived cod
 
 ```bibtex
 @software{MitreHernandez2026OcularCefalicoCode,
-  author  = {Mitre-Hern{\'a}ndez, Hugo},
+  author  = {Autores},
   title   = {{Ocular-Cef{\'a}lico-Silla-VR}: Unity testbed, elastic similarity
              measures, and Proximity Forest 2.0 classifiers for VR-based
              wheelchair control},
