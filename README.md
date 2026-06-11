@@ -48,21 +48,6 @@ If you use this repository, the testbed, the datasets, or any of the derived cod
 }
 ```
 
-**Software / code artifact:**
-
-```bibtex
-@software{MitreHernandez2026OcularCefalicoCode,
-  author  = {Autores},
-  title   = {{Ocular-Cef{\'a}lico-Silla-VR}: Unity testbed, elastic similarity
-             measures, and Proximity Forest 2.0 classifiers for VR-based
-             wheelchair control},
-  year    = {2026},
-  url     = {https://github.com/HugoMitre/Ocular-Cefalico-Silla-VR},
-  version = {1.0.0},
-  institution = {Centro de Investigaci{\'o}n en Matem{\'a}ticas (CIMAT), Unidad Zacatecas}
-}
-```
-
 > Replace the version tag and add a DOI once a Zenodo release is archived. We recommend creating a tagged release (`v1.0.0`) and minting a DOI through the GitHub–Zenodo integration for permanent citation.
 
 ---
@@ -326,8 +311,10 @@ Released under the **MIT License** (see `LICENSE` file). Third-party Unity asset
 
 ## Authors and Affiliation
 
-- **Hugo Mitre-Hernández** — Centro de Investigación en Matemáticas (CIMAT), Unidad Zacatecas, México. Research areas: human–computer interaction, machine learning, assistive technology.
-- *Co-authors as listed in the journal manuscript.*
+- **Manuel Alejandro Delgado-Ramos** — Ex-student, Centro de Investigación en Matemáticas (CIMAT), Unidad Zacatecas, México. Research areas: human–machine interaction, educational technologies.
+- **Hugo Mitre-Hernandez** — Centro de Investigación en Matemáticas (CIMAT), Unidad Zacatecas, México. Research areas: human–machine interaction, affective computing, eyetracking, machine learning, assistive technology.
+- **Hector Cardona-Reyes** — Centro de Investigación en Matemáticas (CIMAT), Unidad Zacatecas, México. Research areas: human–machine interaction, VR, assistive technology.
+
 
 ---
 
