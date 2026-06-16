@@ -42,7 +42,7 @@ If you use this repository, the testbed, the datasets, or any of the derived cod
 @article{MitreHernandez2026OcularCefalico,
   author  = {Authors]},
   title   = {Elastic similarity ensembles and a hybrid MSM--LSTM classifier for head-motion command recognition: A multi-criteria framework applied to assistive wheelchair control in virtual reality},
-  journal = {Engineering Applications of Artificial Intelligence},
+  journal = {Universal Access in the Information Society},
   year    = {2026},
   note    = {Manuscript submitted for publication}
 }
