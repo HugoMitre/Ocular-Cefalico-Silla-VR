@@ -1,4 +1,4 @@
-# Ocular-Cefálico-Silla-VR
+# Electric Wheelchair Control via Head Movement in VR
 
 **Smart Electric Wheelchair Control via Head and Ocular Movement in a Virtual Reality Environment**
 
